@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.IO.Compression;
 
 namespace LAB_13
 {
@@ -59,6 +60,69 @@ namespace LAB_13
                 File.Delete(path);
             else
                 Console.WriteLine($"File {path} not found!");
+        }
+
+        static public void SaveStringInFile(string path, string Data)
+        {
+            if (!File.Exists(path))
+                return;
+            using (StreamWriter sw = new StreamWriter(path))
+            {
+                sw.WriteLine(Data);
+            }
+        }
+
+        static public string ReadAllInformationFromFile(string path)
+        {
+            if (!File.Exists(path))
+            {
+                Console.WriteLine($"File {path} not found :c");
+                return null;
+            }
+                
+            using (StreamReader sr = new StreamReader(path))
+            {
+                return sr.ReadToEnd();
+            }
+        }
+
+        static public void CopyFilesFromTo(string originDir, string newDir, string extension)
+        {
+            if (!Directory.Exists(originDir))
+            {
+                Console.WriteLine($"{originDir} not found :c");
+                return;
+            }
+
+            if (!Directory.Exists(originDir))
+            {
+                CreateDirectory(newDir);
+            }
+            
+
+            var OD = new DirectoryInfo(originDir);
+            var ODfiles = OD.GetFiles();
+
+            foreach (var item in ODfiles)
+            {
+                string name = Path.Combine(newDir, item.Name);
+                if (item.Extension == extension)
+                {
+                    if (!File.Exists(name))
+                        item.CopyTo(name);
+                }
+                    
+            }
+        }
+
+        static public void CreateArchive(string originPath, string zipPath)
+        {
+            ZipFile.CreateFromDirectory(originPath, zipPath);
+        }
+
+        static public void UnArchive(string zipPath, string newPath)
+        {
+            ZipFile.ExtractToDirectory(zipPath, newPath);
         }
     }
 }
