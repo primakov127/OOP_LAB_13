@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PMNDirInfo.cs" />
+    <Compile Include="PMNDiskInfo.cs" />
+    <Compile Include="PMNFileInfo.cs" />
+    <Compile Include="PMNFileManager.cs" />
+    <Compile Include="PMNLog.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
