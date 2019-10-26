@@ -22,6 +22,8 @@ namespace LAB_13
                 Console.WriteLine($"+File namme: {this._file.Name}\nFile path: {this._file.FullName}");
             else
                 Console.WriteLine($"File {this._file.FullName} not found unfortunately :c");
+
+            PMNLog.WriteLog($"WriteFilePath()");
         }
 
         public void WriteFileInfo()
@@ -30,6 +32,8 @@ namespace LAB_13
                 Console.WriteLine($"+File name: {this._file.Name}\nFile extension: {this._file.Extension}\nFile size: {this._file.Length} byte");
             else
                 Console.WriteLine($"File {this._file.FullName} not found unfortunately :c");
+
+            PMNLog.WriteLog($"WriteFileInfo()");
         }
 
         public void WriteCreationTime()
@@ -38,6 +42,8 @@ namespace LAB_13
                 Console.WriteLine($"+Creation time: {File.GetCreationTimeUtc(this._file.FullName)}");
             else
                 Console.WriteLine($"File {this._file.FullName} not found unfortunately :c");
+
+            PMNLog.WriteLog($"WriteCreationTime()");
         }
     }
 }

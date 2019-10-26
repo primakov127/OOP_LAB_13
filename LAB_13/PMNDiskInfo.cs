@@ -16,8 +16,9 @@ namespace LAB_13
             foreach(var disk in disks)
             {
                 Console.WriteLine($"{disk.Name, 9}\t\t {disk.AvailableFreeSpace/1e9:F2} GB");
-                
             }
+
+            PMNLog.WriteLog($"WriteFreeDiskSpace()");
         }
 
         static public void WriteDriverFormat()
@@ -27,8 +28,9 @@ namespace LAB_13
             foreach (var disk in disks)
             {
                 Console.WriteLine($"{disk.Name,9}\t\t    {disk.DriveFormat, 8}");
-
             }
+
+            PMNLog.WriteLog($"WriteDriverFormat()");
         }
 
         static public void WriteAllDiskInfo()
@@ -38,8 +40,9 @@ namespace LAB_13
             foreach (var disk in disks)
             {
                 Console.WriteLine($"{disk.Name,9}\t\t {disk.TotalSize/1e9:F2} GB\t\t {disk.TotalFreeSpace/1e9:F2} GB");
-
             }
+
+            PMNLog.WriteLog($"WriteAllDiskInfo()");
         }
     }
 }

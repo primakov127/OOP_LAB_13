@@ -44,12 +44,13 @@ namespace LAB_13
             //PMNFileManager.CreateFile(@"E:\PMNInspect\PMNDirInfo.txt");
             //PMNFileManager.CopyFile(@"E:\PMNInspect\PMNDirInfo.txt", @"E:\PMNInspect\PMNNewDirInfo.txt");
             //PMNFileManager.DeleteFile(@"E:\PMNInspect\PMNDirInfo.txt");
-            PMNFileManager.SaveStringInFile(@"E:\PMNInspect\example.txt", "Привет Андрей!");
-            PMNFileManager.CopyFilesFromTo(@"E:\PMNInspect", @"E:\PMNInspect\PMNFiles\", @".txt");
+            //PMNFileManager.SaveStringInFile(@"E:\PMNInspect\example.txt", "Привет Андрей!");
+            //PMNFileManager.CopyFilesFromTo(@"E:\PMNInspect", @"E:\PMNInspect\PMNFiles\", @".txt");
             //PMNFileManager.CreateArchive(@"E:\PMNInspect\PMNFiles\", @"E:\PMNInspect\archive.zip");
-            PMNFileManager.UnArchive(@"E:\PMNInspect\archive.zip", @"E:\PMNInspect\P");
+            //PMNFileManager.UnArchive(@"E:\PMNInspect\archive.zip", @"E:\PMNInspect\P");
 
             #endregion Fifth Task
+
         }
     }
 }

@@ -22,6 +22,8 @@ namespace LAB_13
             var files = Directory.GetFiles(path);
             foreach (var item in files)
                 Console.WriteLine($"\t{item}");
+
+            PMNLog.WriteLog($"WriteListOfFilesAndDirectories(\"{path}\")");
         }
 
         static public void CreateDirectory(string path)
@@ -32,6 +34,8 @@ namespace LAB_13
             {
                 Directory.CreateDirectory(path);
             }
+
+            PMNLog.WriteLog($"CreateDirectory(\"{path}\")");
         }
 
         static public void CreateFile(string path)
@@ -42,6 +46,8 @@ namespace LAB_13
             {
                 File.Create(path);
             }
+
+            PMNLog.WriteLog($"CreateFile(\"{path}\")");
         }
 
         static public void CopyFile(string originPath, string newPath)
@@ -52,6 +58,8 @@ namespace LAB_13
             {
                 File.Copy(originPath, newPath);
             }
+
+            PMNLog.WriteLog($"CreateFile(\"{originPath}\", \"{newPath}\")");
         }
 
         static public void DeleteFile(string path)
@@ -60,6 +68,8 @@ namespace LAB_13
                 File.Delete(path);
             else
                 Console.WriteLine($"File {path} not found!");
+
+            PMNLog.WriteLog($"DeleteFile(\"{path}\")");
         }
 
         static public void SaveStringInFile(string path, string Data)
@@ -70,6 +80,8 @@ namespace LAB_13
             {
                 sw.WriteLine(Data);
             }
+
+            PMNLog.WriteLog($"SaveStringInFile(\"{path}\", \"{Data}\")");
         }
 
         static public string ReadAllInformationFromFile(string path)
@@ -77,6 +89,7 @@ namespace LAB_13
             if (!File.Exists(path))
             {
                 Console.WriteLine($"File {path} not found :c");
+                PMNLog.WriteLog($"ReadAllInformationFromFile(\"{path}\") - File not found");
                 return null;
             }
                 
@@ -84,6 +97,8 @@ namespace LAB_13
             {
                 return sr.ReadToEnd();
             }
+
+            PMNLog.WriteLog($"ReadAllInformationFromFile(\"{path}\")");
         }
 
         static public void CopyFilesFromTo(string originDir, string newDir, string extension)
@@ -113,16 +128,22 @@ namespace LAB_13
                 }
                     
             }
+
+            PMNLog.WriteLog($"CopyFilesFromTo(\"{originDir}\", \"{newDir}\", \"{extension}\")");
         }
 
         static public void CreateArchive(string originPath, string zipPath)
         {
             ZipFile.CreateFromDirectory(originPath, zipPath);
+
+            PMNLog.WriteLog($"CreateArchive(\"{originPath}\", \"{zipPath}\")");
         }
 
         static public void UnArchive(string zipPath, string newPath)
         {
             ZipFile.ExtractToDirectory(zipPath, newPath);
+
+            PMNLog.WriteLog($"UnArchive(\"{zipPath}\", \"{newPath}\")");
         }
     }
 }

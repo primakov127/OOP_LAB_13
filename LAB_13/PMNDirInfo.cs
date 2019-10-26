@@ -22,6 +22,8 @@ namespace LAB_13
                 Console.WriteLine($"+Count of Files in {_directory.Name}: {_directory.GetFiles().Length}");
             else
                 Console.WriteLine($"Directory: {_directory.Name} not found unfortunely :c");
+
+            PMNLog.WriteLog($"WriteCountOfFiles()");
         }
 
         public void WriteCreationTime()
@@ -30,6 +32,8 @@ namespace LAB_13
                 Console.WriteLine($"+{this._directory.Name} Creation time: {Directory.GetCreationTimeUtc(this._directory.FullName)}");
             else
                 Console.WriteLine($"Directory {this._directory.Name} not found unfortunately :c");
+
+            PMNLog.WriteLog($"WriteCreationTime()");
         }
 
         public void WriteCountOfSubdirectories()
@@ -38,6 +42,8 @@ namespace LAB_13
                 Console.WriteLine($"+Count of Subdirectories in {_directory.Name}: {_directory.GetDirectories().Length}");
             else
                 Console.WriteLine($"Directory {this._directory.Name} not found unfortunately :c");
+
+            PMNLog.WriteLog($"WriteCountOfSubdirectories()");
         }
 
         public void WriteListOfParentDirectories()
@@ -51,6 +57,8 @@ namespace LAB_13
             }   
             else
                 Console.WriteLine($"Directory {this._directory.Name} not found unfortunately :c");
+
+            PMNLog.WriteLog($"WriteListOfParentDirectories()");
         }
     }
 }
